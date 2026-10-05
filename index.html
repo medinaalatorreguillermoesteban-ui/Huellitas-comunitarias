@@ -1,336 +1,117 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Proyecto PAEC</title>
-    <style>
-
-* { box-sizing: border-box; }
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #eeeeee;
-    color: #222222;
-}
-
-header {
-    background: #553708;
-    color: white;
-    padding: 15px;
-    border-bottom: 3px solid #d4af37;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 24px;
-    color: #3b341b;
-}
-
-.barra-navegacion {
-    margin-top: 10px;
-    display: flex;
-    gap: 8px;
-}
-
-.botoncito-nav {
-    background: #492c09;
-    color: white;
-    text-decoration: none;
-    padding: 7px 10px;
-    border: 1px solid #d4af37;
-    border-radius: 3px;
-    font-size: 13px;
-}
-
-.botoncito-nav.activo {
-    background: #d4af37;
-}
-
-.logo-cabecera {
-    width: 100px;
-    height: auto;
-}
-
-main {
-    display: flex;
-    min-height: 500px;
-}
-
-aside {
-    width: 25%;
-    background: #174a78;
-    padding: 15px;
-    border-right: 2px solid #d4af37;
-}
-
-section {
-    width: 75%;
-    background: white;
-    padding: 18px;
-}
-
-.sidebar-widget {
-    background: #e7eef5;
-    border: 1px solid #d4af37;
-    padding: 12px;
-    margin-bottom: 15px;
-}
-
-.sidebar-widget h4 {
-    margin-top: 0;
-    border-bottom: 1px solid #999999;
-    padding-bottom: 5px;
-}
-
-.sidebar-list {
-    padding-left: 18px;
-    margin: 0;
-    font-size: 13px;
-}
-
-.sidebar-list li {
-    padding: 5px 0;
-}
-
-.sidebar-list a {
-    color: #12345b;
-    text-decoration: none;
-}
-
-.ad-container {
-    text-decoration: none;
-    display: block;
-}
-
-.ad-dr-pepper {
-    background: #8b0000;
-    color: white;
-    border: 1px solid #550000;
-    padding: 12px;
-    text-align: center;
-}
-
-.ad-img {
-    width: 100%;
-    max-width: 140px;
-    height: auto;
-    margin: 8px auto;
-    display: block;
-}
-
-.ad-tag {
-    background: white;
-    color: #333333;
-    font-size: 10px;
-    padding: 2px 5px;
-}
-
-.ad-dr-pepper h3 {
-    margin: 8px 0;
-    font-size: 20px;
-}
-
-.ad-dr-pepper p {
-    font-size: 12px;
-}
-
-.ad-btn {
-    background: #eeeeee;
-    color: #333333;
-    padding: 5px 9px;
-    font-size: 11px;
-    display: inline-block;
-}
-
-.hero-card, .ability-card, .lore-card {
-    background: #f5f5f5;
-    border: 1px solid #bbbbbb;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 3px;
-}
-
-.hero-card {
-    border-left: 4px solid #777777;
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-    margin-bottom: 15px;
-}
-
-.stat-card {
-    background: #eeeeee;
-    border: 1px solid #bbbbbb;
-    padding: 10px;
-    text-align: center;
-}
-
-.stat-title {
-    font-size: 11px;
-    font-weight: bold;
-}
-
-.stat-value {
-    font-size: 14px;
-}
-
-.skills-preview-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-}
-
-.skill-mini-card {
-    background: white;
-    border-left: 3px solid #777777;
-    border-bottom: 1px solid #cccccc;
-    padding: 10px;
-}
-
-.btn-cta, .btn-volver-inicio {
-    display: inline-block;
-    background: #555555;
-    color: white;
-    text-decoration: none;
-    padding: 7px 12px;
-    border-radius: 3px;
-    font-size: 13px;
-    margin-top: 8px;
-}
-
-.ability-card {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-.ability-info {
-    flex: 1;
-}
-
-.ability-title {
-    margin: 0;
-    font-size: 18px;
-}
-
-.ability-key {
-    background: #dddddd;
-    border: 1px solid #aaaaaa;
-    padding: 2px 6px;
-    font-size: 11px;
-}
-
-.ability-media {
-    width: 180px;
-    height: 105px;
-    overflow: hidden;
-    border: 1px solid #999999;
-    flex-shrink: 0;
-}
-
-.ability-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.lore-header {
-    background: #eeeeee;
-    border: 1px solid #bbbbbb;
-    padding: 15px;
-    margin-bottom: 15px;
-}
-
-.lore-card h3 {
-    margin-top: 0;
-    border-bottom: 1px solid #bbbbbb;
-    padding-bottom: 6px;
-}
-
-.quote-box {
-    background: #eeeeee;
-    border-left: 3px solid #777777;
-    padding: 10px;
-    margin: 12px 0;
-    font-style: italic;
-}
-
-footer {
-    background: #333333;
-    color: white;
-    padding: 10px 15px;
-    font-size: 12px;
-}
-
-@media (max-width: 700px) {
-    main { display: block; }
-    aside, section { width: 100%; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
-    .ability-card { display: block; }
-    .ability-media { margin-top: 10px; }
-}
-
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huellitas Comunitarias - Inicio</title>
+    <!-- Hoja de estilos única externa -->
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
+    <!-- Encabezado con navegación principal -->
     <header>
         <div>
-            <h1>Pagina princial de Huellitas Comunitarias</h1>
+            <h1>Huellitas Comunitarias</h1>
             <nav class="barra-navegacion">
-               <a href="index.html" class="botoncito-nav">Pagina Principal</a>
-                <a href="adopciones.html" class="botoncito-nav activo">adopciones</a>
-                <a href="donaciones.html" class="botoncito-nav">donaciones</a>
+                <a href="index.html" class="botoncito-nav activo">Página Principal</a>
+                <a href="adopciones.html" class="botoncito-nav">Adopciones</a>
+                <a href="donaciones.html" class="botoncito-nav">Donaciones</a>
             </nav>
         </div>
-        <img src="" alt="Huellitas Logo" class="logo-cabecera">
+        <img src="img/logo.png" alt="Huellitas Logo" class="logo-cabecera">
     </header>
 
+    <!-- Contenido Principal -->
     <main>
-        <aside><!-- ANUNCIO DR PEPPER -->
-            <a href="https://www.drpepper.com" target="_blank" class="ad-container">
-                <div class="ad-dr-pepper">
-                    <span class="ad-tag">Patrocinado</span>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTen3jeFXAuI03xZsaokCtEzJNbBY7BWpGC5aTfCnquUw&s=10" alt="Dr Pepper Logo" class="ad-img">
-                    <h3>Dr Pepper</h3>
-                    <p>¡El sabor psicocinético de 23 sabores para recargar tu energía!</p>
-                    <span class="ad-btn">Ir al sitio ↗</span>
-                </div>
-            </a>
+        <!-- Barra lateral de menú/navegación rápida -->
+        <aside>
+            <div class="sidebar-widget">
+                <h4>Navegación Rápida</h4>
+                <ul class="sidebar-list">
+                    <li><a href="#proposito">• Propósito PAEC</a></li>
+                    <li><a href="#estadisticas">• Logros y Métricas</a></li>
+                    <li><a href="#mision-vision">• Misión y Visión</a></li>
+                    <li><a href="#concientizacion">• Concientización</a></li>
+                    <li><a href="#como-ayudar">• ¿Cómo Ayudar?</a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h4>Próximos Eventos</h4>
+                <p style="font-size: 12px; margin-bottom: 5px;"><strong>Jornada de Vacunación:</strong></p>
+                <p style="font-size: 11px; margin-top: 0;">Sábado 15 de Octubre en la Explanada Principal del CBTis 116.</p>
+            </div>
         </aside>
 
+        <!-- Sección de contenido central -->
         <section>
             <article>
-                <div class="hero-card">
-                    <span class="badge-tag">Sobreviviente Principal</span>
-                    <h2>Silver the Hedgehog</h2>
+                <!-- Tarjeta Principal de Presentación -->
+                <div class="hero-card" id="proposito">
+                    <h2>Proyecto PAEC: Bienestar y Protección Animal</h2>
                     <p>
-                        Silver domina el campo de batalla mediante poderes psicocinéticos en <strong>Outcome Memories</strong>.
+                        Bienvenidos a <strong>Huellitas Comunitarias</strong>, un proyecto integral desarrollado en el marco del PAEC (Programa de Aula, Escuela y Comunidad) por estudiantes comprometidos del CBTis No. 116. Nuestra iniciativa nace ante la necesidad de brindar atención, apoyo y segundas oportunidades a perritos y gatitos en situación de vulnerabilidad, abandono o condición de calle.
+                    </p>
+                    <p>
+                        A través del trabajo colectivo entre alumnos, docentes y la comunidad escolar, buscamos transformar el entorno mediante acciones concretas de rescate, cuidado temporal, promoción de la adopción responsable y concientización sobre el trato digno a los animales.
                     </p>
                 </div>
 
-                <div class="stats-grid">
-                    <div class="stat-card"><div class="stat-title">Salud</div><div class="stat-value">105 HP</div></div>
-                    <div class="stat-card"><div class="stat-title">Velocidad</div><div class="stat-value">Normal</div></div>
-                    <div class="stat-card"><div class="stat-title">Energía</div><div class="stat-value">Barra Teal</div></div>
-                    <div class="stat-card"><div class="stat-title">Rol</div><div class="stat-value">Control</div></div>
+                <!-- Cuadrícula de Datos / Estadísticas -->
+                <div class="stats-grid" id="estadisticas">
+                    <div class="stat-card">
+                        <div class="stat-title">RESCATADOS</div>
+                        <div class="stat-value">25+</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-title">ADOPCIONES</div>
+                        <div class="stat-value">12</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-title">VOLUNTARIOS</div>
+                        <div class="stat-value">8</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-title">SEDE</div>
+                        <div class="stat-value">CBTis 116</div>
+                    </div>
+                </div>
+
+                <!-- Sección Misión y Visión -->
+                <div class="lore-card" id="mision-vision">
+                    <h3>Misión y Visión</h3>
+                    <p><strong>Misión:</strong> Fomentar una cultura de respeto, empatía y responsabilidad hacia los animales dentro y fuera del plantel educativo, rescatando y canalizando animales en situación de riesgo hacia hogares permanentes y amorosos.</p>
+                    <p><strong>Visión:</strong> Convertirnos en un modelo sustentable de participación comunitaria escolar, donde la protección animal y la educación ambiental caminen de la mano para reducir significativamente la sobrepoblación de mascotas en situación de calle.</p>
+                </div>
+
+                <!-- Sección Informativa de Concientización -->
+                <div class="lore-card" id="concientizacion">
+                    <h3>Concientización Sobre la Adopción Responsable</h3>
+                    <p>Adoptar un animal de compañía es un compromiso de vida que transforma positivamente tanto al hogar que lo recibe como al animal rescatado. Al elegir adoptar en lugar de comprar:</p>
+                    <ul>
+                        <li>Salvas directamente una vida que ha sufrido abandono o maltrato.</li>
+                        <li>Liberas espacio en refugios y hogares temporales para permitir el rescate de otros animales en riesgo.</li>
+                        <li>Combates la crianza desmedida e informal de mascotas.</li>
+                        <li>Promueves valores de solidaridad, responsabilidad y respeto en la comunidad.</li>
+                    </ul>
+                </div>
+
+                <!-- Sección de Formas de Colaborar -->
+                <div class="lore-card" id="como-ayudar">
+                    <h3>¿Cómo Puedes Ayudar?</h3>
+                    <p>Todos podemos ser parte del cambio. Existen distintas maneras en las que puedes colaborar con el proyecto Huellitas Comunitarias:</p>
+                    <p><strong>1. Adoptando:</strong> Ofrece un hogar definitivo a uno de los perritos o gatitos que tenemos disponibles en nuestra sección de adopciones.</p>
+                    <p><strong>2. Donando:</strong> Aporta alimento seco o húmedo, cobijas, artículos de limpieza o insumos médicos en nuestro centro de acopio.</p>
+                    <p><strong>3. Difundiendo:</strong> Comparte nuestras fichas de adopción y mensajes de concientización en redes sociales para llegar a más familias.</p>
                 </div>
             </article>
         </section>
     </main>
 
+    <!-- Pie de página con datos de contacto -->
     <footer>
-        <p>Correo:Crakedempire@gmail.com
-            Numero: 664 797 8827
-        </p>
+        <p>Correo: Crakedempire@gmail.com | Teléfono: 664 797 8827</p>
     </footer>
 
 </body>
